@@ -7,22 +7,27 @@ function getComputerChoice() {
 
 // Check if player and computer choices match to a losing, winning or draw pair. 
 function playRound(playerSelection, computerSelection) {
+    playerSelection = playerSelection.toLowerCase();
     if (playerSelection === "rock" && computerSelection === "paper" || playerSelection === "paper" && computerSelection === "scissors" || playerSelection === "scissors" && computerSelection === "rock") {
-        return "You Lose!";
+        return "You Lose! " + playerSelection + " beats " + computerSelection;
     } else if (playerSelection === "rock" && computerSelection === "scissors" || playerSelection === "paper" && computerSelection === "rock" || playerSelection === "scissors" && computerSelection === "paper") {
-        return "You Win!";
+        return "You Win! " + playerSelection + " beats " + computerSelection;
     } else {
         return "It's a draw";
     }
 }
 
-// Ask player for their choice. 
-const playerSelection = prompt("What's your choice?", "Rock, Paper, Scissors")
-const computerSelection = getComputerChoice();
-
-// Print outcome in console. 
-console.log(playRound(playerSelection, computerSelection));
+let playerSelection = "";
+let computerSelection = getComputerChoice();
 
 function game() {
-
+    for (i = 1; i < 6; i++) {
+        //playerSelection = prompt("Choose Rock, Paper, or Scissors");
+        playerSelection = "rock";
+        computerSelection = getComputerChoice();
+        console.log(i);
+        console.log(playRound(playerSelection, computerSelection));
+    }
 }
+
+console.log(game());
