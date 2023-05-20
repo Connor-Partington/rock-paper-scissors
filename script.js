@@ -22,8 +22,7 @@ let computerSelection = getComputerChoice();
 
 function game() {
     for (i = 1; i < 6; i++) {
-        //playerSelection = prompt("Choose Rock, Paper, or Scissors");
-        playerSelection = "rock";
+        playerSelection = prompt("Choose Rock, Paper, or Scissors");
         computerSelection = getComputerChoice();
         console.log(i);
         console.log(playRound(playerSelection, computerSelection));
